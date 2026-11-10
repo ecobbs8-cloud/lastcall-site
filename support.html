@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Last Call</title>
+<style>
+  body { margin: 0; background: #140e0b; color: #f4e3c6; font: 18px/1.5 Georgia, serif; }
+  main { max-width: 42rem; margin: 0 auto; padding: 24px 16px 64px; }
+  h1, h2, button { font-family: system-ui, sans-serif; }
+  h1 { color: #ffe7ad; font-size: 2rem; }
+  h2 { color: #ffd56a; font-size: 1.15rem; margin-top: 1.4rem; }
+  nav { display: flex; gap: 8px; flex-wrap: wrap; }
+  button { background: #2a1c12; color: #ffe7ad; border: 1px solid #e0b15a; border-radius: 999px; padding: 6px 12px; }
+  button[aria-pressed="true"] { background: #e0b15a; color: #1a120c; }
+  article { display: none; }
+  article.on { display: block; }
+  a { color: #ffd56a; }
+</style>
+<main>
+  <nav><button type="button" data-pick="en">EN</button><button type="button" data-pick="fr">FR</button><button type="button" data-pick="it">IT</button><button type="button" data-pick="de">DE</button><button type="button" data-pick="es">ES</button></nav>
+  <article lang="en" data-lang="en"><h1>Support</h1><h2>I said I was under 18</h2><p>Close and reopen the app. The “no” is not saved. The gate asks again.</p><h2>Restore Purchases</h2><p>On the shop screen, tap Restore Purchases with the same Apple ID that bought the bundle. The web preview does not use Apple’s receipt.</p><h2>Ads</h2><p>Ads never play during a shift. The first session, the first three clears, and a four-minute gap are quiet. Remove Ads skips them.</p><h2>Daily board and language</h2><p>The daily shelf is the same puzzle for everyone on that date. Language follows the device until you pick one in Settings.</p><h2>Offline</h2><p>A shift does not need a network. Purchases, restore, and ads do.</p><h2>Contact</h2><p>erick.cobbs@mail.grokbot.com</p></article>
+<article lang="fr" data-lang="fr"><h1>Aide</h1><h2>J’ai dit que j’avais moins de 18 ans</h2><p>Ferme et rouvre l’app. Le « non » n’est pas gardé. La question revient.</p><h2>Restaurer les achats</h2><p>Dans la boutique, touche Restaurer les achats avec le même identifiant Apple. L’aperçu web n’utilise pas le reçu Apple.</p><h2>Pubs</h2><p>Jamais pendant un service. La première session, les trois premières réussites et un écart de quatre minutes restent silencieux. L’achat les saute.</p><h2>Plateau du jour et langue</h2><p>Le plateau du jour est le même pour tout le monde à cette date. La langue suit l’appareil jusqu’à un choix dans Réglages.</p><h2>Hors ligne</h2><p>Un service n’a pas besoin du réseau. Les achats, la restauration et les pubs, si.</p><h2>Contact</h2><p>erick.cobbs@mail.grokbot.com</p></article>
+<article lang="it" data-lang="it"><h1>Assistenza</h1><h2>Ho detto di avere meno di 18 anni</h2><p>Chiudi e riapri l’app. Il « no » non è salvato. La domanda torna.</p><h2>Ripristina acquisti</h2><p>Nel negozio, tocca Ripristina acquisti con lo stesso ID Apple. L’anteprima web non usa la ricevuta Apple.</p><h2>Pubblicità</h2><p>Mai durante un turno. La prima sessione, le prime tre vittorie e un intervallo di quattro minuti restano in silenzio. L’acquisto le salta.</p><h2>Tavolo del giorno e lingua</h2><p>Il tavolo del giorno è lo stesso per tutti in quella data. La lingua segue il dispositivo finché non ne scegli una in Impostazioni.</p><h2>Offline</h2><p>Un turno non ha bisogno della rete. Acquisti, ripristino e pubblicità sì.</p><h2>Contatto</h2><p>erick.cobbs@mail.grokbot.com</p></article>
+<article lang="de" data-lang="de"><h1>Hilfe</h1><h2>Ich habe unter 18 gesagt</h2><p>App schließen und neu öffnen. Das Nein ist nicht gespeichert. Die Frage kommt wieder.</p><h2>Käufe wiederherstellen</h2><p>Im Laden auf Käufe wiederherstellen tippen, mit derselben Apple-ID. Die Webvorschau nutzt keinen Apple-Beleg.</p><h2>Anzeigen</h2><p>Nie während einer Schicht. Die erste Sitzung, die ersten drei Siege und ein Abstand von vier Minuten bleiben still. Der Kauf überspringt sie.</p><h2>Tagesbrett und Sprache</h2><p>Das Tagesbrett ist an diesem Datum für alle gleich. Die Sprache folgt dem Gerät, bis du in den Einstellungen eine wählst.</p><h2>Offline</h2><p>Eine Schicht braucht kein Netz. Käufe, Wiederherstellen und Anzeigen schon.</p><h2>Kontakt</h2><p>erick.cobbs@mail.grokbot.com</p></article>
+<article lang="es" data-lang="es"><h1>Ayuda</h1><h2>Dije que tenía menos de 18</h2><p>Cierra y vuelve a abrir la app. El «no» no se guarda. La pregunta vuelve.</p><h2>Restaurar compras</h2><p>En la tienda, toca Restaurar compras con el mismo ID de Apple. El avance web no usa el recibo de Apple.</p><h2>Anuncios</h2><p>Nunca durante un turno. La primera sesión, los tres primeros cierres y un hueco de cuatro minutos se quedan en silencio. La compra los salta.</p><h2>Tablero diario e idioma</h2><p>El tablero diario es el mismo para todos en esa fecha. El idioma sigue al dispositivo hasta que eliges uno en Ajustes.</p><h2>Sin conexión</h2><p>Un turno no necesita red. Las compras, la restauración y los anuncios sí.</p><h2>Contacto</h2><p>erick.cobbs@mail.grokbot.com</p></article>
+</main>
+<script>
+  const pick = (lang) => {
+    const known = ["en","fr","it","de","es"];
+    const next = known.includes(lang) ? lang : 'en';
+    document.querySelectorAll('article').forEach((node) => node.classList.toggle('on', node.dataset.lang === next));
+    document.querySelectorAll('button').forEach((node) => node.setAttribute('aria-pressed', node.dataset.pick === next ? 'true' : 'false'));
+    document.documentElement.lang = next;
+    const url = new URL(location.href);
+    url.searchParams.set('lang', next);
+    history.replaceState(null, '', url);
+  };
+  document.querySelectorAll('button').forEach((node) => node.addEventListener('click', () => pick(node.dataset.pick)));
+  pick(new URLSearchParams(location.search).get('lang') || (navigator.language || 'en').slice(0, 2));
+</script>
