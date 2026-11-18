@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Last Call: Match 3 Press</title>
+  <meta name="description" content="A cocktail match-3 on a back bar. Swap bottles, pour real recipes and serve every ticket before closing time.">
+  <link rel="icon" href="press/icon-256.png" type="image/png">
+  <style>
+    :root {
+      --bg: #140e0b;
+      --bg-2: #1c1410;
+      --ink: #f4e3c6;
+      --gold: #ffe7ad;
+      --amber: #ffd56a;
+      --line: #e0b15a;
+      --panel: #2a1c12;
+      --muted: #c9ad86;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--ink); }
+    body {
+      font: 18px/1.55 Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(1200px 500px at 50% -10%, rgba(224, 177, 90, 0.16), transparent 60%),
+        linear-gradient(180deg, #1a110d 0%, var(--bg) 28%, #100b09 100%);
+      min-height: 100%;
+    }
+    a { color: var(--amber); }
+    header, main, footer { width: min(1120px, calc(100% - 32px)); margin-left: auto; margin-right: auto; }
+    header { padding: 36px 0 12px; text-align: center; }
+    .icon {
+      width: 96px; height: 96px; border-radius: 22px;
+      box-shadow: 0 0 0 1px var(--line), 0 0 28px rgba(224, 177, 90, 0.35);
+    }
+    h1, h2, .kicker, .btn { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    h1 {
+      color: var(--gold); font-size: clamp(2rem, 6vw, 3.4rem);
+      letter-spacing: 0.02em; margin: 16px 0 8px; line-height: 1.1;
+    }
+    .kicker {
+      color: var(--line); text-transform: uppercase; letter-spacing: 0.16em;
+      font-size: 0.75rem; font-weight: 700; margin: 14px 0 0;
+    }
+    .pitch { font-size: 1.15rem; max-width: 38rem; margin: 0 auto 8px; }
+    .release { color: var(--muted); margin: 0 0 24px; }
+    .btn {
+      display: inline-block; background: var(--panel); color: var(--gold);
+      border: 1px solid var(--line); border-radius: 999px;
+      padding: 12px 20px; text-decoration: none; font-weight: 600;
+      min-height: 44px; line-height: 20px;
+    }
+    .btn:hover { background: var(--line); color: #1a120c; }
+    h2 { color: var(--amber); font-size: 1.25rem; margin: 0 0 16px; }
+    section { margin: 40px 0; }
+    .videos, .facts-wrap {
+      display: grid; gap: 24px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 800px) {
+      .videos, .facts-wrap { grid-template-columns: 1fr 1fr; align-items: start; }
+    }
+    figure { margin: 0; }
+    figcaption { color: var(--muted); font-size: 0.95rem; margin-top: 8px; text-align: center; }
+    video {
+      width: 100%; max-height: 640px; background: #000;
+      border-radius: 16px; border: 1px solid rgba(224, 177, 90, 0.45);
+      object-fit: contain;
+    }
+    dl {
+      display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 10px 16px;
+      margin: 0; background: var(--bg-2); border: 1px solid rgba(224, 177, 90, 0.3);
+      border-radius: 16px; padding: 20px 20px 16px;
+    }
+    dt { color: var(--line); font-family: system-ui, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; padding-top: 2px; }
+    dd { margin: 0; overflow-wrap: anywhere; }
+    @media (max-width: 799px) {
+      dl { grid-template-columns: 1fr; gap: 4px 0; }
+      dt { margin-top: 10px; }
+      dt:first-child { margin-top: 0; }
+    }
+    .about { margin: 0 0 8px; }
+    .shots a { text-decoration: none; }
+    .shots {
+      display: grid; gap: 16px 12px; padding: 8px 0 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @media (min-width: 800px) {
+      .shots { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+    .shots a { width: auto; }
+    .shots img {
+      width: 100%; height: auto; display: block; border-radius: 18px;
+      border: 1px solid rgba(224, 177, 90, 0.4);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+    }
+    .shots span {
+      display: block; color: var(--muted); font-size: 0.85rem;
+      text-align: center; margin-top: 6px; font-family: system-ui, sans-serif;
+    }
+    .keyart img {
+      width: 100%; max-width: 280px; height: auto; display: block;
+      margin: 0 auto; border-radius: 24px;
+      border: 1px solid rgba(224, 177, 90, 0.45);
+    }
+    footer a { text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+    .kit { text-align: center; }
+    footer {
+      padding: 12px 0 48px; color: var(--muted); font-size: 0.95rem;
+      display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="kicker">Press</p>
+    <img class="icon" src="press/icon-256.png" width="96" height="96" alt="Last Call: Match 3 icon">
+    <h1>Last Call: Match 3</h1>
+    <p class="pitch">A cocktail match-3 on a back bar. Swap bottles, pour real recipes and serve every ticket before closing time.</p>
+    <p class="release">iPhone and iPad. December 1, 2026.</p>
+    <a class="btn" href="press/last-call-press-kit.zip">Download the press kit</a>
+  </header>
+  <main>
+    <section>
+      <h2>Videos</h2>
+      <div class="videos">
+        <figure>
+          <video controls playsinline preload="metadata" poster="press/poster-half-a-mind.jpg" title="Half a Mind, 30 second ad">
+            <source src="press/last-call-half-a-mind-30s.mp4" type="video/mp4">
+          </video>
+          <figcaption>Half a Mind, 30 second ad</figcaption>
+        </figure>
+        <figure>
+          <video controls playsinline preload="metadata" poster="press/poster-app-preview.jpg" title="App preview, English">
+            <source src="press/last-call-app-preview-en.mp4" type="video/mp4">
+          </video>
+          <figcaption>App Store preview, English</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="facts-wrap">
+      <div>
+        <h2>The game</h2>
+        <p class="about">Last Call: Match 3 is a cocktail match-3, not a jewel grid. You swap bottles, pour real recipes and serve every ticket before closing time. 58 nights across two seasons ship at launch. Season 2 opens after Season 1 with new ingredients, harder goals and four boss nights. A jukebox holds 10 original songs you earn by winning nights or buy with bar points. Named combos, Happy Hour, regulars, and a signature drink you design yourself. A shared Daily Board with a streak, plus a seven-night gift calendar. Tuned haptics. On iPad and iPhone Duo the bar opens into a wide layout. Game Center leaderboards and achievements. Fair optional ads. No subscription or energy timer.</p>
+      </div>
+      <div>
+        <h2>Fact sheet</h2>
+        <dl>
+          <dt>Title</dt><dd>Last Call: Match 3</dd>
+          <dt>Platforms</dt><dd>iPhone and iPad</dd>
+          <dt>Languages</dt><dd>English, French, Italian, German, Spanish</dd>
+          <dt>Nights</dt><dd>58 nights, two seasons</dd>
+          <dt>Jukebox</dt><dd>10 original songs</dd>
+          <dt>Game Center</dt><dd>Leaderboards and achievements</dd>
+          <dt>Release</dt><dd>December 1, 2026</dd>
+          <dt>Publisher</dt><dd>Erick Cobbs. 25+ years as a games publishing executive at Sony PlayStation, Warner Bros. Games, Gearbox Publishing and Cooldown Games; 58 credited titles.</dd>
+          <dt>Contact</dt><dd><a href="mailto:lastcallmatch3.support@gmail.com">lastcallmatch3.support@gmail.com</a></dd>
+        </dl>
+      </div>
+    </section>
+    <section>
+      <h2>Screenshots</h2>
+      <div class="shots">
+        <a href="press/screenshots/iphone/01-serve.jpg"><img src="press/screenshots/iphone/01-serve.jpg" alt="Serving drinks at the bar" width="220"><span>Serve</span></a>
+        <a href="press/screenshots/iphone/02-chain.jpg"><img src="press/screenshots/iphone/02-chain.jpg" alt="A match chain on the back bar" width="220"><span>Chain</span></a>
+        <a href="press/screenshots/iphone/03-season.jpg"><img src="press/screenshots/iphone/03-season.jpg" alt="Season select" width="220"><span>Seasons</span></a>
+        <a href="press/screenshots/iphone/04-jukebox.jpg"><img src="press/screenshots/iphone/04-jukebox.jpg" alt="The jukebox" width="220"><span>Jukebox</span></a>
+        <a href="press/screenshots/iphone/05-ranks.jpg"><img src="press/screenshots/iphone/05-ranks.jpg" alt="Game Center ranks" width="220"><span>Ranks</span></a>
+        <a href="press/screenshots/iphone/06-signature.jpg"><img src="press/screenshots/iphone/06-signature.jpg" alt="Signature drink" width="220"><span>Signature</span></a>
+        <a href="press/screenshots/iphone/07-daily.jpg"><img src="press/screenshots/iphone/07-daily.jpg" alt="Daily Board" width="220"><span>Daily Board</span></a>
+        <a href="press/screenshots/iphone/08-perfect.jpg"><img src="press/screenshots/iphone/08-perfect.jpg" alt="Perfect Season" width="220"><span>Perfect Season</span></a>
+      </div>
+    </section>
+    <section class="kit">
+      <h2>Key art and press kit</h2>
+      <figure class="keyart">
+        <img src="press/keyart-en.jpg" alt="Last Call: Match 3 key art">
+      </figure>
+      <p><a class="btn" href="press/last-call-press-kit.zip">Download the press kit</a></p>
+      <p class="release">Icon, key art, English iPhone and iPad screenshots, and a fact sheet.</p>
+    </section>
+  </main>
+  <footer>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+  </footer>
+</body>
+</html>
