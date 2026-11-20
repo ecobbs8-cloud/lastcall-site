@@ -10,6 +10,7 @@ Last Call: Match 3 is a cocktail match-3, not a jewel grid. You swap bottles on 
 
 Facts
 Title: Last Call: Match 3
+Version: 1.0.1
 Platforms: iPhone, iPhone Duo and iPad (iOS). The bar opens into a wide layout on iPad and iPhone Duo.
 Languages: English, French, Italian, German, Spanish
 Content: 58 nights, two seasons
@@ -25,4 +26,4 @@ Press contact
 lastcallmatch3.support@gmail.com
 
 Press kit
-This folder includes the app icon, key art, nine English iPhone screenshots and eight iPad screenshots from the current build, and this fact sheet.
+This folder includes the app icon, key art, ten English iPhone screenshots and nine iPad screenshots from the current build, and this fact sheet.
