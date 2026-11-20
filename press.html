@@ -8,50 +8,61 @@
   <link rel="icon" href="press/icon-256.png" type="image/png">
   <style>
     :root {
-      --bg: #140e0b;
-      --bg-2: #1c1410;
-      --ink: #f4e3c6;
-      --gold: #ffe7ad;
-      --amber: #ffd56a;
-      --line: #e0b15a;
-      --panel: #2a1c12;
-      --muted: #c9ad86;
+      --bg: #080323;
+      --bg-2: #12053a;
+      --ink: #f4f0fb;
+      --gold: #f0c14b;
+      --magenta: #ff6ad5;
+      --line: #e38bff;
+      --panel: #16062f;
+      --muted: #cbb8e8;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; background: var(--bg); color: var(--ink); }
     body {
       font: 18px/1.55 Georgia, "Times New Roman", serif;
       background:
-        radial-gradient(1200px 500px at 50% -10%, rgba(224, 177, 90, 0.16), transparent 60%),
-        linear-gradient(180deg, #1a110d 0%, var(--bg) 28%, #100b09 100%);
+        radial-gradient(1100px 520px at 50% -12%, rgba(255, 64, 200, 0.22), transparent 58%),
+        radial-gradient(800px 480px at 100% 18%, rgba(120, 40, 255, 0.18), transparent 55%),
+        radial-gradient(700px 400px at 0% 30%, rgba(90, 20, 180, 0.16), transparent 50%),
+        linear-gradient(180deg, #14043c 0%, var(--bg) 30%, #05011a 100%);
       min-height: 100%;
     }
-    a { color: var(--amber); }
+    a { color: var(--magenta); }
+    a:hover { color: #ff9ae4; }
     header, main, footer { width: min(1120px, calc(100% - 32px)); margin-left: auto; margin-right: auto; }
     header { padding: 36px 0 12px; text-align: center; }
     .icon {
       width: 96px; height: 96px; border-radius: 22px;
-      box-shadow: 0 0 0 1px var(--line), 0 0 28px rgba(224, 177, 90, 0.35);
+      box-shadow: 0 0 0 1px var(--gold), 0 0 28px rgba(255, 64, 200, 0.5), 0 0 48px rgba(140, 40, 255, 0.35);
     }
     h1, h2, .kicker, .btn { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    h1, h2 {
+      color: var(--gold);
+      background-image: linear-gradient(180deg, #ffcc4d 0%, #e8b122 42%, #b8860b 78%, #f0c14b 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
     h1 {
-      color: var(--gold); font-size: clamp(2rem, 6vw, 3.4rem);
+      font-size: clamp(2rem, 6vw, 3.4rem);
       letter-spacing: 0.02em; margin: 16px 0 8px; line-height: 1.1;
     }
     .kicker {
-      color: var(--line); text-transform: uppercase; letter-spacing: 0.16em;
+      color: var(--magenta); text-transform: uppercase; letter-spacing: 0.16em;
       font-size: 0.75rem; font-weight: 700; margin: 14px 0 0;
     }
     .pitch { font-size: 1.15rem; max-width: 38rem; margin: 0 auto 8px; }
     .release { color: var(--muted); margin: 0 0 24px; }
     .btn {
       display: inline-block; background: var(--panel); color: var(--gold);
-      border: 1px solid var(--line); border-radius: 999px;
+      border: 1px solid var(--gold); border-radius: 999px;
       padding: 12px 20px; text-decoration: none; font-weight: 600;
       min-height: 44px; line-height: 20px;
+      box-shadow: 0 0 18px rgba(255, 64, 200, 0.25);
     }
-    .btn:hover { background: var(--line); color: #1a120c; }
-    h2 { color: var(--amber); font-size: 1.25rem; margin: 0 0 16px; }
+    .btn:hover { background: var(--gold); color: var(--bg); box-shadow: 0 0 22px rgba(240, 193, 75, 0.35); }
+    h2 { font-size: 1.25rem; margin: 0 0 16px; }
     section { margin: 40px 0; }
     .videos, .facts-wrap {
       display: grid; gap: 24px;
@@ -64,12 +75,13 @@
     figcaption { color: var(--muted); font-size: 0.95rem; margin-top: 8px; text-align: center; }
     video {
       width: 100%; max-height: 640px; background: #000;
-      border-radius: 16px; border: 1px solid rgba(224, 177, 90, 0.45);
+      border-radius: 16px; border: 1px solid rgba(227, 139, 255, 0.55);
+      box-shadow: 0 0 24px rgba(255, 64, 200, 0.18);
       object-fit: contain;
     }
     dl {
       display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 10px 16px;
-      margin: 0; background: var(--bg-2); border: 1px solid rgba(224, 177, 90, 0.3);
+      margin: 0; background: var(--bg-2); border: 1px solid rgba(227, 139, 255, 0.35);
       border-radius: 16px; padding: 20px 20px 16px;
     }
     dt { color: var(--line); font-family: system-ui, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; padding-top: 2px; }
@@ -91,8 +103,8 @@
     .shots a { width: auto; }
     .shots img {
       width: 100%; height: auto; display: block; border-radius: 18px;
-      border: 1px solid rgba(224, 177, 90, 0.4);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+      border: 1px solid rgba(227, 139, 255, 0.45);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45), 0 0 18px rgba(255, 64, 200, 0.16);
     }
     .shots span {
       display: block; color: var(--muted); font-size: 0.85rem;
@@ -101,7 +113,8 @@
     .keyart img {
       width: 100%; max-width: 280px; height: auto; display: block;
       margin: 0 auto; border-radius: 24px;
-      border: 1px solid rgba(224, 177, 90, 0.45);
+      border: 1px solid rgba(227, 139, 255, 0.5);
+      box-shadow: 0 0 28px rgba(255, 64, 200, 0.28);
     }
     footer a { text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
     .kit { text-align: center; }
