@@ -12,7 +12,7 @@ Facts
 Title: Last Call: Match 3
 Version: 1.0.1
 Platforms: iPhone, iPhone Duo and iPad (iOS). The bar opens into a wide layout on iPad and iPhone Duo.
-Languages: English, French, Italian, German, Spanish
+Languages: English, French, Italian, German, Spanish, Japanese, Korean, Traditional Chinese
 Content: 58 nights, two seasons
 Jukebox: 10 original songs
 Game Center: leaderboards and achievements
